@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Nubank</title>
+    <style>
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+            z-index: 101;
+        }
+ 
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--dark);
+            border-radius: 2px;
+            transition: transform 0.35s ease, opacity 0.25s ease;
+            transform-origin: center;
+        }
+ 
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+ 
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 56px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 56px);
+            background-color: #fff;
+            z-index: 100;
+            flex-direction: column;
+            padding: 32px 24px;
+            gap: 8px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+ 
+        .mobile-menu.open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+ 
+        .mobile-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 14px 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: color 0.2s;
+        }
+ 
+        .mobile-menu a:hover {
+            color: var(--purple);
+        }
+ 
+        .mobile-menu .btn-nubank {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 16px;
+            padding: 14px 20px;
+            border-radius: 30px;
+            border-bottom: none;
+        }
+ 
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .mobile-menu {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo-img" src="./img/Logo-Nubank.png" alt="logo">
+        <h1>Thyago Dev</h1>
+        <nav>
+                <a href="#">Nubank</a>  
+                <a href="#">Nubank Ultravioleta</a>  
+                <a href="#">Nu Empresas</a>  
+                <a href="#">Segurança</a>  
+                <a href="#">Saiba mais</a>  
+        </nav>
+        <a class="btn-nubank" href="https://nubank.com.br/">Quero ser Nubank</a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+ 
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#">Nubank</a>
+        <a href="#">Nubank Ultravioleta</a>
+        <a href="#">Nu Empresas</a>
+        <a href="#">Segurança</a>
+        <a href="#">Saiba mais</a>
+        <a class="btn-nubank" href="https://nubank.com.br/">Quero ser Nubank</a>
+    </div>
+ 
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Vote no nome da arena e veja o seu proprio nome aparecer la</h1>
+                <a href="#" class="btn-nubank">Votar Agora</a>
+            </div>
+            <div class="hero-card">
+                <h3>Peca seu cartão de Credito e sua Conta do Nubank</h3>
+                <label>Digite seu CPF</label>
+                <input type="text" placeholder="000.000.000-00">
+                <button class="btn-confirm">Confirmar</button>
+            </div>
+        </div>
+    </section>
+ 
+    <section class="services">
+        <a href="">Conta do Nubank</a>
+        <a href="">Cartao de credito</a>
+        <a href="">Seguro Nubank</a>
+        <a href="">Nu Celular</a>
+        <a href="">Shopping</a>
+        <a href="">Investimento</a>
+        <a href="">Emprestimo</a>
+    </section>
+ 
+    <section class="card-section">
+        <div class="credit-card">
+            <div class="card-chip"></div>
+            <p class="card-number">•••• •••• •••• 5438</p>
+            <div class="card-info">
+                <span>Thyago Hud</span>
+                <strong>Nu</strong>
+            </div>
+        </div>
+ 
+ 
+ 
+        <div class="card-text">
+            <h2>O cartão que você controla</h2>
+            <p>Sem anuidade. Sem complicação. Com limite que acompanha você e notificações instantâneas a cada compra.</p>
+            <ul>
+                <li>Zero anuidade, para sempre</li>
+                <li>Programa de pontos e cashback</li>
+                <li>Aceito em milhoes de estabelecimento</li>
+                <li>Bloqueio e desbloqueio pelo app</li>
+            </ul>
+            <a class="btn-purple" href="#">Pedir meu Cartão</a>
+        </div>
+ 
+ 
+ 
+    </section>
+ 
+    <section class="cta">
+        <h2>Pronto para simplificar sua vida financeira</h2>
+        <p>Abra sua conta em minutos. Sem filas, sem papelada, sem burocracia</p>
+ 
+        <a href="#" class="btn-cta">Abrir sua conta grátis</a>
+    </section>
+ 
+    <footer>
+        <div class="footer-top">
+            <div class="footer-first-child">
+                <img class="footer-logo" src="./img/Logo-Nubank.png" alt="">
+                <p>2026 Nu Pagamentos S.A. Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-links">
+                 <h4>Produtos</h4>
+                 <a href="#">Conta digital</a>
+                 <a href="#">Cartao de credito</a>
+                 <a href="#">investimentos</a>
+                 <a href="#">Emprestimos</a>
+            </div>
+            <div class="footer-links">
+                <h4>Nubank</h4>
+                 <a href="#">Sobre nós</a>
+                 <a href="#">Carreiras</a>
+                 <a href="#">Imprensa</a>
+                 <a href="#">Comunidade</a>
+            </div>
+            <div class="footer-links">
+                <h4>Ajuda</h4>
+                 <a href="#">Central de ajuda</a>
+                 <a href="#">Blog</a>
+                 <a href="#">Seguranca</a>
+                 <a href="#">Contato</a>
+            </div>
+        </div>
+ 
+        <p class="footer-bottom">2026 Nubank - ThyagoDev. Todos os direitos reservados</p>
+    </footer>
+ <script src="scripts.js"></script>
+</body>
+</html>
